@@ -1,3 +1,5 @@
+git config --global user.email "adityaoligehu@gmail.com"
+git config --global user.name "Aditya Oli"
 alias ctrinfo="kubectl cluster-info"
 alias kgp="kubectl get pods"
 alias kl="kubectl logs"
@@ -825,9 +827,8 @@ klserv (){
 
 # script that find a pod in the entire cluster
 findpod (){
-  all_namespaces=( `kubens` )
+  all_namespaces=`kubens`
   string_to_search=$1
-
   for namespace in "${all_namespaces[@]}"; do 
     kubens $namespace
     echo "=======================================================$(kubens -c)=============================================================="
